@@ -21,7 +21,7 @@ class App extends Component {
         return (
             <div className="App">
               <header className="App-header">
-                <img src={ logo } className="App-logo" alt="logo" />
+                <span role="img" className="App-logo" alt="logo" aria-label="music note emoji" >🎵</span>
                 <h1 className="App-title">Image map behavior using vector shapes</h1>
               </header>
               <InteractiveLineup/>

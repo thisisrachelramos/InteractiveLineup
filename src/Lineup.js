@@ -20,13 +20,16 @@ class Lineup extends React.Component {
 
         this.state = {
             songUrl: "",
-            songState: Sound.status.PAUSE,
+            songState: "PAUSED",
 
         };
         this.playSong = this.playSong.bind(this);
+
     }
 
-    componentDidMount() {}
+    componentDidMount() {
+       
+    }
 
     playSong(artistName, event) {
         var trackUrl = "";
@@ -38,7 +41,7 @@ class Lineup extends React.Component {
             this.setState(prevState => ({
 
                 songUrl: trackUrl,
-                songState: prevState.songState === Sound.status.PLAYING ? Sound.status.PAUSE : Sound.status.PLAYING,
+                songState: prevState.songState === Sound.status.PLAYING ? Sound.status.PAUSE : Sound.status.PLAYING
 
 
 
@@ -48,7 +51,7 @@ class Lineup extends React.Component {
             this.setState(prevState => ({
 
                 songUrl: trackUrl,
-                songState: Sound.status.PLAYING,
+                songState: Sound.status.PLAYING
 
 
             }));
@@ -67,29 +70,25 @@ class Lineup extends React.Component {
                 <svg viewBox="0 0 67 64" preserveAspectRatio="xMinYMin meet" height="64mm" width="67mm">
                   <image width="67" height="64" href={ fabfourplain }></image>
                   <g id="layer1" transform="translate(-40.254463,-73.105804)">
-                    <a onClick={ (e) => this.playSong("george harrison", e) }>
-                      { /* <a href="//georgeharrison.com/" id="george harrison"> */ }
-                      <rect opacity="0" id="rect64" width="15" height="13" y="87" x="44"></rect>
-                    </a>
+                    { /* <a href="//georgeharrison.com/" id="george harrison"> */ }
+                    <rect opacity="0" id="rect64" width="15" height="13" y="87" x="44" onClick={ (e) => this.playSong("george harrison", e) } />
+                    { /* </a> */ }
                     { /* <a href="//paulmccartney.com/" id="paul mccartney"> */ }
-                    <a onClick={ (e) => this.playSong("paul mccartney", e) }>
-                      <rect opacity="0" y="86.623718" x="84.08667" height="15.501633" width="14.165285" id="rect76"></rect>
-                    </a>
+                    <rect opacity="0" y="86.623718" x="84.08667" height="15.501633" width="14.165285" id="rect76" onClick={ (e) => this.playSong("paul mccartney", e) } />
+                    { /* </a> */ }
                     { /* <a href="//johnlennon.com/" id="john lennon"> */ }
-                    <a onClick={ (e) => this.playSong("john lennon", e) }>
-                      <rect opacity="0" y="114.95428" x="43.996235" height="16.303444" width="17.372517" id="rect78"></rect>
-                    </a>
+                    <rect opacity="0" y="114.95428" x="43.996235" height="16.303444" width="17.372517" id="rect78" onClick={ (e) => this.playSong("john lennon", e) } />
+                    { /* </a> */ }
                     { /* <a href="//ringostarr.com/" id="ringo starr"> */ }
-                    <a onClick={ (e) => this.playSong("ringo starr", e) }>
-                      <rect opacity="0" y="120.0324" x="81.948509" height="11.22532" width="14.967093" id="rect80"></rect>
-                    </a>
+                    <rect opacity="0" y="120.0324" x="81.948509" height="11.22532" width="14.967093" id="rect80" onClick={ (e) => this.playSong("ringo starr", e) } />
+                    { /* </a> */ }
                   </g>
                 </svg>
               </div>
               <p className="App-intro">
                 <a href="https://en.wikipedia.org/wiki/The_Club_(dining_club)#Members">
-                                                                                               Example of an old school image map using HTML
-                                                                                           </a>
+                                                                                                           Example of an old school image map using HTML
+                                                                                                       </a>
               </p>
             </div>
             );
